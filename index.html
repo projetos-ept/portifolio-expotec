@@ -445,6 +445,92 @@
             }
         }
 
+        .fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            cursor: pointer;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .fullscreen-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fullscreen-image {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 0.4s ease;
+        }
+
+        .close-fullscreen {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .close-fullscreen:hover {
+            transform: rotate(90deg) scale(1.1);
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .preview-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .preview-img:hover {
+            transform: scale(1.02);
+        }
+
+        .zoom-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: var(--secondary);
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         @media (max-width: 768px) {
             .header-bg {
                 padding: 40px 20px;
@@ -466,6 +552,13 @@
                 padding: 15px 35px;
                 font-size: 1em;
             }
+
+            .close-fullscreen {
+                top: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -485,7 +578,11 @@
                     <span>👁️</span>
                     <span>Visualização do Modelo</span>
                 </div>
-                <img src="modelo-portifolio.png" alt="Modelo de Portfólio" class="preview-img">
+                <img src="modelo-portifolio.png" alt="Modelo de Portfólio" class="preview-img" onclick="openFullscreen()">
+                <div class="zoom-hint">
+                    <span>🔍</span>
+                    <span>Clique na imagem para ampliar</span>
+                </div>
             </div>
 
             <div class="card download-section">
@@ -605,6 +702,12 @@
         </footer>
     </div>
 
+    <!-- Fullscreen Overlay -->
+    <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="closeFullscreen()">
+        <div class="close-fullscreen">✕</div>
+        <img src="modelo-portifolio.png" alt="Modelo de Portfólio - Visualização Ampliada" class="fullscreen-image">
+    </div>
+
     <script>
         function toggleCanva() {
             const content = document.getElementById('canvaContent');
@@ -613,6 +716,25 @@
             content.classList.toggle('open');
             chevron.classList.toggle('open');
         }
+
+        function openFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFullscreen() {
+            const overlay = document.getElementById('fullscreenOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+            }
+        });
     </script>
 </body>
 </html>
