@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Para o Portfólio da ExpoTEC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #1e3a5f;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1e3a5f;
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #5a7a9f;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+
+        .model-preview {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .model-preview img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .download-btn {
+            background: #1e3a5f;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #2d5080;
+        }
+
+        .orientations {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .orientations h2 {
+            color: #1e3a5f;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-left: 4px solid #1e3a5f;
+            padding-left: 15px;
+        }
+
+        .orientations ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .orientations li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #4a4a4a;
+        }
+
+        .orientations li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1e3a5f;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            color: #5a7a9f;
+        }
+
+        .cetep-label {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="CETEP/LNAB Logo" class="logo">
+            <h1>Modelo Para o Portfólio da ExpoTEC</h1>
+            <p class="subtitle">Organize seu trabalho de forma profissional</p>
+        </header>
+
+        <div class="model-preview">
+            <h2 style="color: #1e3a5f; margin-bottom: 15px;">Visualização do Modelo</h2>
+            <img src="modelo-portifolio.png" alt="Modelo de Portfólio">
+        </div>
+
+        <div class="download-section">
+            <a href="template-portifolio.png" download class="download-btn">
+                📥 Baixar Template
+            </a>
+        </div>
+
+        <div class="orientations">
+            <h2>Orientações Gerais</h2>
+            <ul>
+                <li><strong>Limite de fotos:</strong> Utilize no máximo 3 fotos por página para manter a organização e clareza visual</li>
+                <li><strong>Qualidade das imagens:</strong> Certifique-se de que as fotos estejam nítidas e bem enquadradas</li>
+                <li><strong>Blocos de texto:</strong> Podem ser adicionados blocos informativos para contextualizar seu projeto, mas evite textos longos</li>
+                <li><strong>Objetividade:</strong> Seja direto e objetivo nas descrições, destacando os pontos principais do seu trabalho</li>
+                <li><strong>Organização:</strong> Mantenha um layout limpo e profissional, seguindo o padrão do template</li>
+                <li><strong>Identidade visual:</strong> Respeite as cores e o estilo minimalista da identidade CETEP</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p class="cetep-label">CETEP/LNAB</p>
+            <p>ExpoTEC - Apresente seu projeto com excelência</p>
+        </footer>
+    </div>
+</body>
+</html>
